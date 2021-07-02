@@ -1,10 +1,6 @@
-@import "../color";
+@import "../based/color.scss";
 
 header {
-  background: url("../../img/header_background.jpg");
-  height: 90vh;
-  width: 100%;
-  position: relative;
   .header-top-nav {
     background: $black;
     .header-top-container {
@@ -15,25 +11,51 @@ header {
       align-items: center;
       text-transform: capitalize;
       color: $gray;
+      .top-nav-left {
+        font-size: 1.3rem;
+        select {
+          color: $gray;
+          option {
+            color: $black;
+          }
+        }
+        &:hover {
+          select,
+          label {
+            color: $white;
+            cursor: pointer;
+          }
+        }
+      }
       .top-nav-menu {
         list-style: none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 25%;
         font-size: 1.3rem;
+        .menu-login,
+        .menu-register {
+          a {
+            color: $gray;
+            text-decoration: none;
+            &:hover {
+              color: $white;
+            }
+          }
+        }
         .menu-login {
-          margin-right: 8.2rem;
-          margin-left: 1.6rem;
+          margin: 0 8.2rem 0 3.2rem;
         }
         .header-cart {
           background: $blue;
-          color: $white;
           padding: 1.6rem;
           font-size: 2rem;
           display: flex;
           justify-content: space-between;
+          a {
+            color: $white;
+          }
           .header-cart-selection {
             color: $white;
             font-size: 1.3rem;
@@ -41,6 +63,9 @@ header {
             outline: none;
             border: none;
             background: transparent;
+            option {
+              color: $black;
+            }
           }
         }
       }
@@ -77,19 +102,16 @@ header {
       .header-search {
         display: flex;
         align-items: center;
+        border: 1px solid rgb(216, 216, 216);
+        padding: 0 1rem;
         .search-bar {
           width: 15rem;
           height: 3rem;
         }
-        border: 1px solid rgb(216, 216, 216);
+        i {
+          cursor: pointer;
+        }
       }
     }
-  }
-  .header-symbol-text {
-    color: $gray;
-    text-transform: uppercase;
-    word-spacing: 10rem;
-    position: absolute;
-    bottom: 0;
   }
 }

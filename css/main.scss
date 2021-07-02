@@ -1,8 +1,36 @@
+@import "./based/reset";
+@import "./based/font";
 @import "./components/container";
 @import "./layout/header";
 @import "./layout/footer";
+@import "./layout/section";
+@import "./abstract/mixin";
 
-select,
-input {
-  outline: none;
+main {
+  min-height: 100vh;
+  .top-section {
+    height: 45rem;
+    color: $white;
+    position: relative;
+    @include linearBG(url("../img/header_background.jpg"));
+    .top-heading {
+      text-transform: uppercase;
+      font-size: 4.6rem;
+      span {
+        font-weight: lighter;
+      }
+    }
+    .slogan {
+      text-transform: uppercase;
+      font-size: 3rem;
+    }
+    .background-text {
+      font-size: 45rem;
+      @include lhCrop(1.2);
+      position: absolute;
+      bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 10rem;
+    }
+  }
 }
