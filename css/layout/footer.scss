@@ -1,24 +1,19 @@
 @import "../abstract/mixin";
 
 footer {
-  background: #333333;
+  background: $black;
   color: $gray;
   .footer-container {
+    margin: 0 auto;
     padding: 1.6rem 0;
     @include flexBox(row, space-between, center);
-    .copyright-text {
-      cursor: pointer;
-    }
-    .creator-list {
+    .footer-right-items {
+      @include flexBox(row, none, center);
       list-style: none;
-      @include flexBox(row, space-between, center);
       gap: 3.2rem;
-      .creator {
-        cursor: pointer;
-      }
     }
-    .copyright-text,
-    .creator {
+    .footer-item {
+      cursor: default;
       &:hover {
         color: $white;
       }

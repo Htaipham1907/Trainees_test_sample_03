@@ -1,8 +1,5 @@
 @import "../abstract/mixin";
 
 .container {
-  width: 93%;
-  padding: 10rem 0;
-  margin: 0 auto;
-  @include flexBox(column, center, center);
+  width: 80%;
 }

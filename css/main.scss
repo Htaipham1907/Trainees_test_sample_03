@@ -6,31 +6,33 @@
 @import "./layout/section";
 @import "./abstract/mixin";
 
-main {
-  min-height: 100vh;
-  .top-section {
-    height: 45rem;
+.section-intro {
+  @include linearBG(url("../img/top_section_background.jpg"));
+  padding: 17rem;
+  position: relative;
+  .intro-container {
+    margin: 0 auto;
+    @include flexBox(column, center, center);
+    text-transform: uppercase;
     color: $white;
-    position: relative;
-    @include linearBG(url("../img/header_background.jpg"));
-    .top-heading {
-      text-transform: uppercase;
-      font-size: 4.6rem;
+    gap: calc(5.4rem / 2);
+    .intro-primary-heading {
+      font-size: 4.8rem;
+      font-weight: 700;
       span {
-        font-weight: lighter;
+        font-weight: 300;
       }
     }
-    .slogan {
-      text-transform: uppercase;
+    .intro-secondary-heading {
       font-size: 3rem;
     }
-    .background-text {
-      font-size: 45rem;
-      @include lhCrop(1.2);
+    .intro-background-text {
+      font-size: 54rem;
+      text-transform: uppercase;
+      @include lhCrop(1.21);
       position: absolute;
       bottom: 0;
-      text-transform: uppercase;
-      letter-spacing: 10rem;
+      opacity: 0.05;
     }
   }
 }

@@ -1,113 +1,79 @@
-@import "../based/color.scss";
+@import "../based/color";
+@import "../abstract/mixin";
 
 header {
-  .header-top-nav {
+  @include flexBox(column-reverse, none, none);
+  .secondary-bar {
     background: $black;
-    .header-top-container {
-      padding: 0 1.6rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      text-transform: capitalize;
+    .secondary-container {
       color: $gray;
-      .top-nav-left {
-        font-size: 1.3rem;
-        select {
-          color: $gray;
-          option {
-            color: $black;
-          }
-        }
-        &:hover {
-          select,
-          label {
-            color: $white;
-            cursor: pointer;
-          }
-        }
+      margin: 0 auto;
+      @include flexBox(row, space-between, center);
+      font-size: 1.3rem;
+      #selection-currency {
+        color: $gray;
       }
-      .top-nav-menu {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.3rem;
-        .menu-login,
-        .menu-register {
-          a {
-            color: $gray;
-            text-decoration: none;
-            &:hover {
-              color: $white;
-            }
-          }
+      .secondary-menu-cart {
+        @include flexBox(row, space-between, none);
+        gap: 8.5rem;
+        .secondary-menu {
+          list-style: none;
+          text-transform: capitalize;
+          @include flexBox(row, none, center);
+          gap: 3.2rem;
         }
-        .menu-login {
-          margin: 0 8.2rem 0 3.2rem;
-        }
-        .header-cart {
+        .secondary-cart {
           background: $blue;
+          color: $white;
           padding: 1.6rem;
-          font-size: 2rem;
-          display: flex;
-          justify-content: space-between;
-          a {
+          #selection-cart {
             color: $white;
-          }
-          .header-cart-selection {
-            color: $white;
-            font-size: 1.3rem;
-            margin-left: 1.6rem;
-            outline: none;
-            border: none;
-            background: transparent;
-            option {
-              color: $black;
-            }
           }
         }
       }
     }
   }
-  .header-main {
-    i {
-      color: $gray;
-    }
-    padding: 4.2rem 10rem;
-    margin: 0 auto;
-    background: $white;
-    .header-main-logo {
-      font-size: 2.4rem;
-    }
-    .header-main-nav {
-      display: flex;
-      list-style: none;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 2rem;
-      text-transform: uppercase;
-      .menu {
-        cursor: pointer;
-        &:hover {
-          color: $blue;
+  .primary-bar {
+    .primary-container {
+      width: 95%;
+      margin: 0 auto;
+      @include flexBox(row, space-between, baseline);
+      flex: 1;
+      flex-wrap: wrap;
+      padding: 4rem 0;
+      gap: 1.6rem;
+      .primary-heading {
+        img {
+          width: 100%;
+          height: auto;
+        }
+        margin-right: 10rem;
+      }
+      .primary-menu {
+        @include flexBox(row, none, center);
+        gap: 5rem;
+        .primary-menu-items {
+          list-style: none;
+          text-transform: uppercase;
+          @include flexBox(row, none, baseline);
+          gap: 3.2rem;
+          .primary-item {
+            color: $black;
+            @include flexBox(column, center, flex-start);
+            a {
+              text-decoration: none;
+              color: $black;
+              &:hover {
+                color: $blue;
+              }
+            }
+          }
         }
       }
-      .mens-menu {
-        display: flex;
-        flex-direction: column;
-      }
-      .header-search {
-        display: flex;
-        align-items: center;
-        border: 1px solid rgb(216, 216, 216);
-        padding: 0 1rem;
-        .search-bar {
-          width: 15rem;
-          height: 3rem;
-        }
+      .primary-search-bar {
+        border: 1px solid $gray;
+        padding: 1rem 1.6rem;
+        @include flexBox(row-reverse, space-between, center);
         i {
           cursor: pointer;
         }
