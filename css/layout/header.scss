@@ -21,6 +21,10 @@ header {
           text-transform: capitalize;
           @include flexBox(row, none, center);
           gap: 3.2rem;
+          a {
+            color: $gray;
+            text-decoration: none;
+          }
         }
         .secondary-cart {
           background: $blue;
